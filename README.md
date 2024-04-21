@@ -1,18 +1,21 @@
 # MLP-MIXER-KERAS
 
-We present a framework to train a variety of MLP Mixer models. Reference : [Original Paper](https://arxiv.org/abs/2105.01601) by Ilya Tolstikhin et al. [Google Research]
+This repo presents a framework to train a variety of MLP Mixer models. 
+The framework was further used to conduct experimentation on non-linearities on the projection layers to match performance with Vision Transformers while being memory and compute efficient.
 
-Our pipeline is implemented in Keras and has many functionalities to train, fine-tune, and test it on different datasets.
 
-We provide the user with the option to choose:
+The pipeline is implemented in Keras and has many functionalities to train, fine-tune, and test it on different datasets.
+
+User is provided the option to choose:
 -	Model architecture : b16/l16/s16/b32/l32/s32
 -	Dataset : Cifar10, Pets, Tiny Imagenet
 -	Pretrained Model weights : B16 or L16 with ImageNet 1k or 21k
 -	Load a locally saved model
 -	Whether to fine-tune, train from scratch, or just test.
 
+
 The user can further specify hyperparameters like:
--	Activations and whether to use them (original paper did not for first layer)
+-	Non-linear Activations and whether to use them (original paper did not use them for the Projection layers)
 -	Un-Freezing of layers (Only top or all)
 -	Optimizers and learning rates, decays etc.
 -	Batch Size
@@ -111,8 +114,6 @@ Has the whole model implementation for MLP mixer and other intermediate blocks. 
 
 
 ### Acknowledgements:
-Our MLP Mixer model implementation borrows code from [keras_mlp](https://github.com/leondgarse/keras_mlp) repository by user [leondgarse](https://github.com/leondgarse) to implement the MLP Mixer architecture such that we can reload saved pretrained weights provided by the same repository. However it only provides prediction capability on singular images, and we provide extensive training and testing functionality on large datasets.
+Reference : [Original ML-Mixer Paper](https://arxiv.org/abs/2105.01601) by Ilya Tolstikhin et al. [Google Research]
 
 
-
-![image](https://github.com/ecbme4040/e4040-2023fall-project-gavq/assets/27878610/aeaeb323-e0ea-4c8a-8607-e37a98fac342)
